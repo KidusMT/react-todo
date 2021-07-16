@@ -1,5 +1,6 @@
 function App() {
   return (
+    <div>Hello Buddy!</div>
   );
 }
 
