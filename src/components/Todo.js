@@ -1,3 +1,4 @@
+
 function Todo(props) {
     function deleteHandler(){
         console.log(props.text + " clicked!")
