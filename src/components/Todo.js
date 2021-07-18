@@ -22,8 +22,8 @@ function Todo(props) {
         {/* <button className='btn' onClick={()=>{}}>Delete</button> */}
         <button className='btn' onClick={deleteHandler}>Delete</button>
       </div>
-      {modalIsOpen? <Modal onCancel={closeHandler}/> : null}
-      {modalIsOpen? <Backdrop onCancel={closeHandler}/> : null}
+      {modalIsOpen && <Modal onCancel={closeHandler}/>}
+      {modalIsOpen ? <Backdrop onCancel={closeHandler}/> : null}
     </div>
   );
 }
