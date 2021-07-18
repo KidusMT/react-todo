@@ -3,31 +3,34 @@ import Backdrop from "./Backdrop";
 import Modal from "./Modal";
 
 function Todo(props) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const [ modalIsOpen, setModalIsOpen ] = useState(false);
+  function deleteHandler() {
+    setModalIsOpen(true);
+  }
 
-    function deleteHandler(){
-        setModalIsOpen(true);
-    }
+  function closeHandler() {
+    setModalIsOpen(false);
+  }
 
-    function closeHandler(){
-        setModalIsOpen(false);
-    }
-
-    function confirmHandler(){
-        console.log(`Deleted ${props.text}.`);
-    }
+  function confirmHandler() {
+    console.log(`Deleted ${props.text}.`);
+  }
 
   return (
-    <div className='card'>
+    <div className="card">
       <h2>{props.text}</h2>
-      <div className='actions'>
+      <div className="actions">
         {/* <button className='btn' onClick={function()=>{}}>Delete</button> */}
         {/* <button className='btn' onClick={()=>{}}>Delete</button> */}
-        <button className='btn' onClick={deleteHandler}>Delete</button>
+        <button className="btn" onClick={deleteHandler}>
+          Delete
+        </button>
       </div>
-      {modalIsOpen && <Modal onCancel={closeHandler} onConfirm={confirmHandler}/>}
-      {modalIsOpen ? <Backdrop onCancel={closeHandler}/> : null}
+      {modalIsOpen && (
+        <Modal onCancel={closeHandler} onConfirm={confirmHandler} />
+      )}
+      {modalIsOpen ? <Backdrop onCancel={closeHandler} /> : null}
     </div>
   );
 }
