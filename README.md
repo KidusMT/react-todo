@@ -6,7 +6,7 @@
 >> cd demo-app
 ```
 
-## Routing library has to be installed using `npm install --save react-router-dom`
+## Routing library has to be installed , [for more](https://reactrouter.com/web/guides/quick-start)
 ```shell
 >> npm install --save react-router-dom
 ```
@@ -82,3 +82,28 @@ useEffect(() => {
     }, [])
 ``` 
 
+### Simple POST
+
+```js
+const postData = function() {
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attribute: attribute 
+            })
+        };
+
+        fetch('/admin/health',requestOptions)
+            .then(res => { console.log(res)})
+            .catch(err => console.error(err))
+    }
+    
+    function submit(e){
+        e.preventDefault();
+        console.log(attribute);
+        postData();
+        
+    }
+```
