@@ -168,7 +168,7 @@ import { Link } from "react-router-dom";
 export default function Footer(){
 
     return (
-        <footer className={classes.header}>
+        <footer className={classes.footer}>
           <div>
             <h1>We can put the @ copy right 2021 thing here</h1>
           </div>
