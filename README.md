@@ -1,4 +1,4 @@
-# React Meetup
+# React Cookbook
 
 ## Create Project
 ```shell
