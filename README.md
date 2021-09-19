@@ -255,3 +255,22 @@ EXPOSE 4000
 
 CMD [ "npm", "start" ]
 ```
+## HTTP API test files: `POST` and `GET` requests with response body
+
+```
+POST http://localhost:3000/item
+Content-Type: application/json
+
+{
+        "name": "chipsw",
+        "quantity": 2
+}
+
+###
+
+GET http://localhost:3000/items
+
+###
+
+PUT  http://localhost:3000/item/5cf80b731ad6501f0ca9d49e/quantity/3
+```
