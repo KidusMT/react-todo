@@ -276,3 +276,21 @@ GET http://localhost:3000/items
 
 PUT  http://localhost:3000/item/5cf80b731ad6501f0ca9d49e/quantity/3
 ```
+
+## react-bootstrap library for UI
+### Card Components
+
+```js
+import logo from '/path/of/file/logo.svg';
+
+<Card key={item.id}
+    style={{ width: "100%", height: "3rem" , display: 'flex', flexDirection: 'row'}}
+    className="mb-1">
+    <Card.Img 
+        style={{ width: "50px", height: "50px" }} 
+        src={logo} />
+    <Card.Body>
+        <Card.Title>{item.attribute}</Card.Title>
+    </Card.Body>
+</Card>
+```
