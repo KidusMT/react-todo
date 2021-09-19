@@ -212,3 +212,46 @@ li {
     color: color-name;
   }
 ```
+
+## .travis.yml configs -> was for NodeJS backend project
+
+```yml
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t kidusmt/name-of-project .
+  - docker images kidusmt/name-of-project
+
+before_deploy:
+  - docker login -u username -p password
+
+deploy:
+  provider: script
+  script: docker push kidusmt/node
+  on:
+    branch: main
+```
+
+## Dockerfile configs for NodeJS backend project
+
+```Dockerfile
+FROM node:10.0.0
+
+RUN mkdir /usr/src/app
+
+WORKDIR /usr/src/app
+
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+COPY package*.json /usr/src/app/
+
+RUN npm install
+
+COPY . /usr/src/app/
+
+EXPOSE 4000
+
+CMD [ "npm", "start" ]
+```
