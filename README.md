@@ -176,3 +176,37 @@ export default function Footer(){
       );
 }
 ```
+## Important CSS 
+
+```css
+.column-list {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+
+li {
+  margin-left: 3rem;
+  vertical-align: middle;
+}
+
+
+.header {
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    padding: 0 10%;
+  }
+
+  .header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .link {
+    padding: 10 0;
+    text-decoration: none;
+    color: color-name;
+  }
+```
