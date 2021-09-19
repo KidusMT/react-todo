@@ -179,6 +179,7 @@ export default function Footer(){
 ## Important CSS 
 
 ```css
+/* keeping padding between column */
 .column-list {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -190,11 +191,11 @@ li {
   vertical-align: middle;
 }
 
-
+/* keeping headers between column */
 .header {
     width: 100%;
     height: 5rem;
-    background-color: black;
+    background-color: color-name;
     padding: 0 10%;
   }
 
@@ -204,6 +205,7 @@ li {
     display: flex;
   }
   
+/* formatting anchor tags and links */
   .link {
     padding: 10 0;
     text-decoration: none;
