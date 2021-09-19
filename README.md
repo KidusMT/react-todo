@@ -39,6 +39,7 @@ reportWebVitals();
 import { Route, Switch } from "react-router-dom";
 import './App.css';
 import NavHeader from './components/layout/NavHeader';
+import Footer from './components/layout/Footer';
 import Page1 from './components/layout/page1/Page1';
 import Page2 from './components/layout/page2/Page2';
 
@@ -55,6 +56,7 @@ function App() {
            <Page2 />
          </Route>
        </Switch>
+       <Footer/>
     </div>
   );
 }
