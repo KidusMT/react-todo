@@ -1,1 +1,84 @@
 # React Meetup
+
+## Create Project
+```shell
+>> npx create-react-app demo-app
+>> cd demo-app
+```
+
+## Routing library has to be installed using `npm install --save react-router-dom`
+```shell
+>> npm install --save react-router-dom
+```
+
+## index.js -> routing
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+
+## App.js -> Router, Switch `react-router-dom` 
+```js
+import { Route, Switch } from "react-router-dom";
+import './App.css';
+import NavHeader from './components/layout/NavHeader';
+import Page1 from './components/layout/page1/Page1';
+import Page2 from './components/layout/page2/Page2';
+
+function App() {
+
+  return (
+    <div>
+       <NavHeader/>
+       <Switch>
+         <Route path="/" exact>
+            <Page1 />
+         </Route>
+         <Route path="/replay">
+           <Page2 />
+         </Route>
+       </Switch>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## fetching using API , we cal also use [axios](https://www.npmjs.com/package/axios) using `useEffect` and `useState`
+```js
+import React, { useEffect, useState } from 'react';
+
+const [list, setList] = useState([]);
+const [attribute, setAttribute] = useState("");
+
+const getList =  function (){
+        return fetch('/end-point-url')
+        .then(res => res.json())
+        .catch(err => console.error(err))
+    }
+
+useEffect(() => { 
+        getList().then(items => {
+        console.log(items)
+        setList(items)})
+    }, [])
+``` 
+
