@@ -6,6 +6,48 @@
 >> cd demo-app
 ```
 
+## Reusable `api.js` used as a client for making API call
+```js
+const BASE_URL = "http://localhost:8080";
+var config = {
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    }
+};
+
+export const post = (endpoint, data) => {
+
+    const requestOptions = {
+        method: 'POST',
+        headers: config.headers,
+        body: JSON.stringify(data)
+    };
+
+    const url  =`${endpoint}`;
+    return fetch(url, requestOptions).then( async (response) => {
+        if(!response.ok){
+            return Promise.reject("Error while posting data!");
+        }
+    })
+}
+
+export const get = (endpoint, id=null) => {
+    const url = id ? `${endpoint}/${id}` :  `${endpoint}`
+
+    return fetch(url, config).then( async (response) => {
+        const data = await response.json();
+
+        if(response.ok){
+            return data;
+        }else{
+            const error = data || data.message;
+            return Promise.reject(error)
+        }
+    })
+}
+```
+
 ## Routing library has to be installed , [for more](https://reactrouter.com/web/guides/quick-start)
 ```shell
 >> npm install --save react-router-dom
