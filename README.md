@@ -51,7 +51,7 @@ function App() {
          <Route path="/" exact>
             <Page1 />
          </Route>
-         <Route path="/replay">
+         <Route path="/page">
            <Page2 />
          </Route>
        </Switch>
@@ -82,10 +82,15 @@ useEffect(() => {
     }, [])
 ``` 
 
-### Simple POST
+### Simple `POST` : important methods
 
 ```js
-const postData = function() {
+
+      function handle(e){
+        setAttribute(e.target.value);
+      }
+
+      const postData = function() {
 
         const requestOptions = {
             method: 'POST',
@@ -95,7 +100,7 @@ const postData = function() {
             })
         };
 
-        fetch('/admin/health',requestOptions)
+        fetch('/end-point-url',requestOptions)
             .then(res => { console.log(res)})
             .catch(err => console.error(err))
     }
@@ -106,4 +111,68 @@ const postData = function() {
         postData();
         
     }
+
+```
+### Simple Form for `POST` inside `return` of the function component
+```js
+        <div>
+            <div className="App">
+                    <div>
+                        <form onSubmit={submit}>
+                            <input onChange={handle} value={attribute} id="name" name="name" />
+                            <button onClick={submit} type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div>
+                        <br></br>
+                        <ul className="column-list">
+                                {list && list.map(item => {item.attribute} )}
+                        </ul>
+                    </div>
+            </div>
+        </div>
+```
+
+
+## Some UI Components: keep components in components package and name css files with `.module.css` extesions
+
+## Header
+```js
+import classes from "./NavHeader.module.css";
+import { Link } from "react-router-dom";
+
+export default function NavHeader(){
+
+    return (
+        <header className={classes.header}>
+          <nav>
+            <ul>
+              <li>
+                <Link className={classes.link} to="/"><h3>Page 1</h3></Link>
+              </li>
+              <li>
+                <Link className={classes.link} to="/page"><h3>Page 2</h3></Link>                
+              </li>
+            </ul>
+          </nav>
+        </header>
+      );
+}
+```
+
+## Footer 
+```js
+import classes from "./Footer.module.css";
+import { Link } from "react-router-dom";
+
+export default function Footer(){
+
+    return (
+        <footer className={classes.header}>
+          <div>
+            <h1>We can put the @ copy right 2021 thing here</h1>
+          </div>
+        </footer>
+      );
+}
 ```
