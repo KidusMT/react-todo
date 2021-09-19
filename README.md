@@ -255,7 +255,7 @@ EXPOSE 4000
 
 CMD [ "npm", "start" ]
 ```
-## HTTP API test files: `POST` and `GET` requests with response body
+## HTTP API test files: `POST` and `GET` requests with response body : `test.http`
 
 ```
 POST http://localhost:3000/item
