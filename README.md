@@ -278,7 +278,7 @@ PUT  http://localhost:3000/item/5cf80b731ad6501f0ca9d49e/quantity/3
 ```
 
 ## react-bootstrap library for UI
-### Card Components
+### Card Components [for more](https://react-bootstrap.github.io/components/cards/)
 
 ```js
 import logo from '/path/of/file/logo.svg';
