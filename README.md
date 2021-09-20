@@ -58,8 +58,7 @@ How to use:
         try{
             const result = await get('endpoint/one');
             setList(result)
-        }
-        catch(error){
+        }catch(error){
           console.log({error})   
         }
     }
@@ -72,10 +71,10 @@ How to use:
    const postData = async (value)  => {
         try {
             const data = { attribute: value };
-            await post('admin/health', data);
+            await post('endpoint/two', data);
+            // after posting getList() again for updating content
             getList();
-        }
-        catch(error){
+        }catch(error){
             console.log({error})
         }
     }
