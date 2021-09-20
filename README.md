@@ -7,6 +7,8 @@
 ```
 
 ## Reusable `api.js` used as a client for making API call
+- [fetch vs axios](https://www.smashingmagazine.com/2020/06/rest-api-react-fetch-axios/)
+
 ```js
 const BASE_URL = "http://localhost:8080";
 var config = {
