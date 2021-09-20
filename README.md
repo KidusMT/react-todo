@@ -377,7 +377,7 @@ import logo from '/path/of/file/logo.svg';
 ```
 
 
-## Reactjs Table with React-Bootstrap
+## Reactjs [Table with React-Bootstrap](https://react-bootstrap.github.io/components/table/#tables)
 ```js
 <Table striped bordered hover>
   <thead>
