@@ -49,6 +49,44 @@ export const get = (endpoint, id=null) => {
     })
 }
 ```
+How to use: 
+```js
+    import {get, post } from '../../api';
+
+    // GET
+    const getList = async () => {
+        try{
+            const result = await get('endpoint/one');
+            setList(result)
+        }
+        catch(error){
+          console.log({error})   
+        }
+    }
+
+    useEffect( () => {
+       getList(); 
+    },[])
+
+   // POST
+   const postData = async (value)  => {
+        try {
+            const data = { attribute: value };
+            await post('admin/health', data);
+            getList();
+        }
+        catch(error){
+            console.log({error})
+        }
+    }
+    
+    function submit(e){
+        e.preventDefault();
+        if(attribute) {
+            postData(attribute);
+        }
+    }
+```
 
 ## Routing library has to be installed , [for more](https://reactrouter.com/web/guides/quick-start)
 ```shell
