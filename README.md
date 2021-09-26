@@ -454,3 +454,5 @@ module.exports = sum = (first, second) =>  first + second;
 
 For executing the test: 
 `>> npm test`
+
+![image](https://user-images.githubusercontent.com/18373774/134793453-e526c3ff-dd1a-4bee-b79b-51b8b1a4a5eb.png)
