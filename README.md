@@ -430,7 +430,7 @@ module.exports = sum = (first, second) =>  first + second;
 ```
 ---
 
-`package.json`
+`package.json` : [cli-options](https://jestjs.io/docs/cli#options)
 
 ```json
 {
@@ -439,7 +439,9 @@ module.exports = sum = (first, second) =>  first + second;
   "description": "",
   "main": "sum.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+     "test:watch": "npm test -- --watchAll",
+     "test:coverage": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",
