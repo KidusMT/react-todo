@@ -409,3 +409,48 @@ import logo from '/path/of/file/logo.svg';
   </tbody>
 </Table>
 ```
+
+## ReactJS testing using `jest`
+
+`sum.test.js`
+
+```js
+const sum = require('./sum')
+
+test('itShouldAddProperly', ()=> 
+    expect(sum(2, 3)).toBe(5)
+)
+```
+---
+
+`sum.js`
+
+```js
+module.exports = sum = (first, second) =>  first + second;
+```
+---
+
+`package.json`
+
+```json
+{
+  "name": "testing-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.2.2"
+  }
+}
+
+```
+---
+
+For executing the test: 
+`>> npm test`
